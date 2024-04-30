@@ -1,5 +1,5 @@
 from django.contrib import admin
-from contact.models import Contact
+from contact.models import Contact, Category
 
 # Register your models here.
 
@@ -14,3 +14,7 @@ class ContactAdmin(admin.ModelAdmin):
     # list_editable = ('first_name', 'last_name',)
     list_display_links = ('id', 'first_name',)
 
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    ordering = ('id',)  # Para ordernar decrescente apenas colocar um - na frente do id
